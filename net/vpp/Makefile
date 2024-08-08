@@ -4,8 +4,9 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 #MASTER_SITES=	
 
-#PATCH_SITES=	https://github.com/adventureloop/${PORTNAME}/commit/
-#PATCHFILES=	669b3815e2ca7aa0653d8ca567b25165b3a75738.patch:-p1
+PATCH_SITES=	https://github.com/adventureloop/${PORTNAME}/commit/
+PATCHFILES=	fba2754d78cde15f93d19f86499aa3803110bc73.patch:-p1
+PATCHFILES+=	c15618aa59bf39197c66ec2e82c58c02d4c56c20.patch:-p1
 
 MAINTAINER=	thj@freebsd.org
 COMMENT=	VPP: A fast, scalable layer 2-4 multi-platform network stack.
@@ -15,12 +16,10 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
-#GH_ACCOUNT=	FDio
-GH_ACCOUNT=	adventureloop
+GH_ACCOUNT=	FDio
 GH_PROJECT=	vpp
-# this should be a tag once we run in a release
-# https://github.com/adventureloop/vpp/archive/62a61769a5be442b8e7de31264f2e56b49fa5024.tar.gz
-GH_TAGNAME=	62a61769a5be442b8e7de31264f2e56b49fa5024
+# This is the tested commit on the stable/2406 branch
+GH_TAGNAME=	cd30ea1ddfc320965cbf01d02bed2f370bb11504
 
 #USES= 		gmake ninja:build pkgconfig python:build
 USES= 		gmake ninja:build python:build shebangfix ssl
